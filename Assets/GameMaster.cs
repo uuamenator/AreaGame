@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameMaster : MonoBehaviour
 {
     //private const int WIDTH = 8;
     //private const int HEIGHT = 6;
@@ -77,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void CreateTile(int x, int y)
     {
         Tile tile = DrawTile(x * TILE_WIDTH, y * TILE_HEIGTH);
+        tile.X = x;
+        tile.Y = y;
         tiles.Add(tile);
         tileMap.Add(new Coordinates(x, y), tile);
     }
@@ -114,6 +116,7 @@ public class GameManager : MonoBehaviour
         {
             resources -= tile.Cost;
             income += tile.Purchase();
+            CreateSurrounding(tile.X, tile.Y);
         }
         else
         {

@@ -6,8 +6,7 @@ using UnityEngine;
 public class Grasslands : Tile
 {
     private const string BASE_NAME = "Grasslands";
-    private float x;
-    private float y;
+
 
     public Sprite unoccupiedSprite;
     public Sprite occupiedSprite;
@@ -18,9 +17,9 @@ public class Grasslands : Tile
     private void Awake()
     {
         base.Awake();
-        x = this.GetComponent<Transform>().position.x;
-        y = this.GetComponent<Transform>().position.y;
-        TileName = string.Format("{0} {1} {2}", BASE_NAME, x, y);
+        //X = this.GetComponent<Transform>().position.x;
+        //Y = this.GetComponent<Transform>().position.y;
+        TileName = string.Format("{0} {1} {2}", BASE_NAME, X, Y);
         Yield = 1;
         Cost = 10;
         //     Debug.Log("Awake Grasslands");

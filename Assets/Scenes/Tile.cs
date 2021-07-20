@@ -10,19 +10,23 @@ public abstract class Tile : MonoBehaviour
     private int yield;
     private int cost;
     private bool isOccupied = false;
-    public GameManager gm;
+    public GameMaster gm;
     private float timer = 0f;
     private const float timeToYield = 5.0f;
     public GameObject progressBar;
     public GameObject yieldText;
     public int index;
     public static int tilesCreated = 0;
+    private int x;
+    private int y;
 
     public string TileName { get => tileName; set => tileName = value; }
     public bool IsOccupied { get => isOccupied; set => isOccupied = value; }
     public int Yield { get => yield; set => yield = value; }
     public int Cost { get => cost; set => cost = value; }
     public float Timer { get => timer; set => timer = value; }
+    public int X { get => x; set => x = value; }
+    public int Y { get => y; set => y = value; }
 
     public void Awake()
     {
