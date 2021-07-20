@@ -18,8 +18,6 @@ public abstract class Tile : MonoBehaviour
     public int index;
     public static int tilesCreated = 0;
 
-    //LOOOOL 4Head
-
     public string TileName { get => tileName; set => tileName = value; }
     public bool IsOccupied { get => isOccupied; set => isOccupied = value; }
     public int Yield { get => yield; set => yield = value; }
