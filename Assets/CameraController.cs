@@ -40,15 +40,15 @@ public class CameraController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - CAMERA_MOVE_SPEED_DEFAULT, CAMERA_Z_COORD);
+            transform.position = new Vector3(transform.position.x, transform.position.y - CAMERA_MOVE_SPEED_DEFAULT * CameraSpeedFactor, CAMERA_Z_COORD);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(transform.position.x - CAMERA_MOVE_SPEED_DEFAULT, transform.position.y, CAMERA_Z_COORD);
+            transform.position = new Vector3(transform.position.x - CAMERA_MOVE_SPEED_DEFAULT * CameraSpeedFactor, transform.position.y, CAMERA_Z_COORD);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + CAMERA_MOVE_SPEED_DEFAULT, transform.position.y, CAMERA_Z_COORD);
+            transform.position = new Vector3(transform.position.x + CAMERA_MOVE_SPEED_DEFAULT * CameraSpeedFactor, transform.position.y, CAMERA_Z_COORD);
         }
         if (Input.GetKey(KeyCode.Space))
         {
@@ -83,7 +83,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1))
         {
             Vector3 moveDelta = MouseDragOrigin - Input.mousePosition;
-            transform.position = CameraDragOrigin + moveDelta;
+            transform.position = CameraDragOrigin + (moveDelta * CameraSpeedFactor);
         }
     }
 
