@@ -11,7 +11,7 @@ public class GameMaster : MonoBehaviour
     private const int TILE_WIDTH = 100;
     private const int TILE_HEIGTH = 100;
 
-    private int resources = 1000;
+    private int resources = 100;
     private int income = 0;
 
     public Text resourcesText;

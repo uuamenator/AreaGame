@@ -9,10 +9,7 @@ public class Grasslands : Tile
 
 
     public Sprite unoccupiedSprite;
-    public Sprite occupiedSprite;
-
-    
-    
+    public Sprite occupiedSprite;    
 
     private void Awake()
     {
@@ -25,30 +22,12 @@ public class Grasslands : Tile
         //     Debug.Log("Awake Grasslands");
     }
 
-    private void OnMouseEnter()
-    {
-        //Debug.Log("huj");
-        this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    private void OnMouseExit()
-    {
-        this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-    }
-
-    private void OnMouseDown()
-    {
-//        Debug.Log(TileName + " " + IsOccupied.ToString());
-        if (!IsOccupied)
-        {
-            gm.TileClicked(this);
-        }
-    }
-
+    /*
     public void Update()
     {
         base.Update();
     }
+    */
 
     public override int Purchase()
     {

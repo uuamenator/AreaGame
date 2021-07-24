@@ -88,6 +88,26 @@ public abstract class Tile : MonoBehaviour
         progressBar.GetComponent<Slider>().value = timer / timeToYield;
     }
 
+    public void OnMouseEnter()
+    {
+        //Debug.Log("huj");
+        transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void OnMouseExit()
+    {
+        transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void OnMouseDown()
+    {
+        //        Debug.Log(TileName + " " + IsOccupied.ToString());
+        if (!IsOccupied)
+        {
+            gm.TileClicked(this);
+        }
+    }
+
     //public void StartHarvestAnimation()
     //{
     //    yieldText.GetComponent<Transform>().localPosition = new Vector2(0, 0);
